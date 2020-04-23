@@ -10,55 +10,21 @@ font-family: 'Modak', cursive;
 
 */
 
-/* nav bar */
-.logo{grid-area: logo;}
-.nav{grid-area: nav;}
-.nav_bar{ grid-area: nv_bar;
-}
 
 
-/* cover bar og lyt*/
-.cover_top{Grid-area: cover_top;}
-.btn{grid-area: btn;}
 
 
-/* social links*/
-.socials_bar{ grid-area: sv_bar;}
-.top{grid-area: top;
-margin-left: 15rem;}
 
 
-/* IDEA: waaaaa  */
-.middle1{grid-area: middle1;
-margin-left: 10rem;}
-.album_cover{grid-area: album_cover;}
-.album_1{grid-area: album_1;}
-.album_2{grid-area: album_2;}
-.album_3{grid-area: album_3;}
-.album_4{grid-area: album_4;}
-
-.middle2{grid-area: middle2;
-margin-left: 10rem;}
-.om_os_tekst{grid-area: om_os_tekst;}
-.middle3{grid-area: middle3;
-margin-left: 10rem;}
-
-.footer{grid-area: footer;}
-
-.om_os_img{grid-area: om_os_img;}
-
-
-html {font-size: 90%;}
-
-/* */
-@media (max-width: 75em) {
-html {font-size: 90%; }
-}
-
-
-@media (max-width: 56.25em) {
-html {font-size: 88%; }
-}
+/* font type og size */
+html {
+  font-size: 90%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 90%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 88%; } }
 
 body {
         font-family: "Lato", sans-serif;
@@ -68,26 +34,40 @@ body {
         color: #777;
          }
 
+/* Mobile wrapper */
 
-/* desktop wrapper */
-@media(min-width: 1px) {
-            .wrapper {
-                max-width: 1980px;
-                margin: 30px auto;
-                font-size: 1.2em;
-                background: #f7f7f7;
+.wrapper {
+  max-width: 1024px;
+  margin: 30px auto;
+  font-size: 1.2em;
+  background-color: #C9EBF3;
+}
+.wrapper > * {
+  border-radius: 5px;
+}
 
-            }
-            .wrapper > * {
-                border-radius: 5px;
-
-            }
-
-            .wrapper {
-              display: grid;
-              grid-gap: 20px;
-              grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-              grid-template-areas:
+.wrapper {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-areas: 
+  "logo logo nv_bar nv_bar"
+  "video video video video"
+  "cover_top cover_top cover_top cover_top"
+  ". top top ."
+  ". sv_bar sv_bar ."
+  ". middle1 middle1 ."
+  "album_cover album_cover album_cover album_cover"
+  "album_cover album_cover album_cover album_cover"
+  ". middle2 middle2 ."
+  "color5 om_os_tekst om_os_tekst color2"
+  "color3 om_os_img om_os_img color4"
+  ". middle3 middle3 ."
+  ". album_2 album_2 ."
+  ". album_1 album_1 ."
+  ". album_3 album_3 ."
+  ". footer footer ."
+}
+/* ideer
                 ". logo logo logo logo . . nv_bar nv_bar nv_bar . ."
                 ". cover_top cover_top cover_top cover_top cover_top btn btn btn btn . ."
                 ". . . . . top top . . . . ."
@@ -103,16 +83,49 @@ body {
                 ". . . . . album_3 album_4 . . . . ."
                 ". footer footer . . . . . . . . ."
 
+}
+/*ends*/
+
+
+/* desktop wrapper */
+@media(min-width: 1200px) {
+           .wrapper {
+                max-width: 1980px;
+                font-size: 1.2em;
+                background: #C9EBF3;
             }
+
+            .wrapper {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+              grid-template-areas:
+                ". logo logo logo logo . . . nv_bar nv_bar nav_bar ."
+                "color color color video video video video video video color2 color2 color2"
+                ". . . . top top top . . . . ."
+                ". . . . sv_bar sv_bar sv_bar sv_bar . . . ."
+                ". . . . . middle1 middle1 middle1 . . . ."
+                "color3 color3 color3 album_cover album_cover album_cover album_cover album_cover album_cover color4 color4 color4"
+                ". . . . . middle2 middle2 middle2 . . . ."
+                ". . om_os_tekst om_os_tekst om_os_tekst om_os_tekst om_os_img om_os_img om_os_img om_os_img . ."
+                ". . . . . middle3 middle3 . . . . ."
+                "color5 color5 color5 album_1 album_1 color6 color6 album_2 album_2 color7 color7 color7"
+                "color8 color8 color8 color8 color8 album_3 album_3 color9 color9 color9 color9 color9"
+                ". footer footer . . . . . . . . ."
+
+            }
+          }
 /* desktop wrapper ends */
 
 
 /* image size */
 .cover_top{width: 100%}
 .om_os_img{width: 100%}
-.album_cover{width: 1000%}
-
-
+.album_cover_small{width: 100%}
+.video{width: 100%;}
+.album_1{width: 100%;}
+.album_2{width: 100%;}
+.album_3{width: 100%;}
+.album_4{width: 100%;}
 
 
 h2
@@ -125,10 +138,10 @@ h2
   text-decoration: none;
   color: black;
 }
-/* btn */
+/*
+/* btn 
 .btn {
   text-decoration: none;
-  color: black;
   -webkit-filter: drop-shadow(1.5px 1.5px 4px #222);
   filter: drop-shadow(1px 1px 2px #222);
   border-radius: 2px;
@@ -140,12 +153,12 @@ h2
 }
 .btn--blue {
   color: #80DEEA; 
-  padding-top: 25rem;
-  padding-left: 20rem;
 }
+*/
 
 /*social media icons*/
 .fa {
+
     padding: 20px;
     font-size: 30px;
     width: 50px;
@@ -185,3 +198,68 @@ h2
   }
 
   /*social media icons ends*/
+
+
+
+  /* nav bar */
+.logo{grid-area: logo;}
+.nav{grid-area: nav;}
+.nav_bar{ grid-area: nv_bar;
+}
+
+
+/* cover bar og lyt*/
+.cover_top{Grid-area: cover_top;}
+.btn{grid-area: btn;}
+.video{grid-area: video;}
+
+/* social links*/
+.socials_bar{ grid-area: sv_bar;}
+.top{grid-area: top;
+text-align: center;}
+
+
+/* IDEA: waaaaa  */
+.middle1{grid-area: middle1;
+text-align: center;}
+.album_cover_small{grid-area: album_cover;}
+.album_1{grid-area: album_1;}
+.album_2{grid-area: album_2;}
+.album_3{grid-area: album_3;}
+.album_4{grid-area: album_4;}
+
+/* Om Os*/
+.middle2{grid-area: middle2;
+text-align: center;}
+.om_os_tekst{grid-area: om_os_tekst;
+text-align: center;
+font-size: 50%;}
+.om_os_img{grid-area: om_os_img;}
+
+/*Galleri*/
+.middle3{grid-area: middle3;
+text-align: center;}
+
+.footer{grid-area: footer;
+font-size: 1.5rem;}
+
+.colorred{grid-area: color;
+background-color:#F3D5D6;}
+.color2{grid-area: color2;
+  background-color:#F3D5D6;}
+  .color3{grid-area: color3;
+    background-color:#F3D5D6;}
+    .color4{grid-area: color4;
+      background-color:#F3D5D6;}
+      .color5{grid-area: color5;
+        background-color:#F3D5D6;}
+        .color6{grid-area: color6;
+          background-color:#F3D5D6;}
+          .color7{grid-area: color7;
+            background-color:#F3D5D6;}
+            .color8{grid-area: color8;
+              background-color:#F3D5D6;}
+              .color9{grid-area: color9;
+                background-color:#F3D5D6;}
+                .color10{grid-area: color10;
+                  background-color:#F3D5D6;}
